@@ -29,12 +29,18 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
+/**
+ * Simple application for getting started with Gluon Charm 
+ * 
+ * More here: http://gluonhq.com/products/charm/
+ * 
+ * @author Jose Pereda @JPeredaDnr
+ */
 public class HelloCharm extends MobileApplication {
     
     private final Label labelDialog = new Label();
     private final Label labelCheck = new Label();
     private ToolBar homeToolbar;
-    
     
     @Override
     public void init() throws Exception {
