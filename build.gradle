@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath 'org.javafxports:jfxmobile-plugin:1.0.0-b10-SNAPSHOT'
+    }
+}
+
+apply plugin: 'org.javafxports.jfxmobile'
+
+repositories {
+    jcenter()
+    maven {
+        credentials {
+            File propsFile = file("C:\\Java\\repo.properties");
+            if (propsFile.exists()) {
+                Properties props = new Properties();
+                props.load(new FileInputStream(propsFile))
+                username props.getProperty('ALIAS')
+                password props.getProperty('PASSWORD')
+            }
+        }
+        url 'http://gluonhq.com:8081/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+ext.GLUON_VERSION = "0.0.1-SNAPSHOT"
+
+dependencies {
+    compile "com.gluonhq:charm:$GLUON_VERSION"
+    desktopRuntime "com.gluonhq:charm-desktop:$GLUON_VERSION"
+    androidRuntime "com.gluonhq:charm-android:$GLUON_VERSION"
+    iosRuntime "com.gluonhq:charm-ios:$GLUON_VERSION"
+}
+
+mainClassName = 'org.jpereda.charm.HelloCharm'
+
+jfxmobile {
+    ios {
+        forceLinkClasses = [ 'org.jpereda.charm.**.*', 'com.gluonhq.charm.down.**.*' ]
+    }
+}
