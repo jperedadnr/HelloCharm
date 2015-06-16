@@ -15,23 +15,14 @@ apply plugin: 'org.javafxports.jfxmobile'
 repositories {
     jcenter()
     maven {
-        credentials {
-            File propsFile = file("C:\\Java\\repo.properties");
-            if (propsFile.exists()) {
-                Properties props = new Properties();
-                props.load(new FileInputStream(propsFile))
-                username props.getProperty('ALIAS')
-                password props.getProperty('PASSWORD')
-            }
-        }
-        url 'http://gluonhq.com:8081/nexus/content/repositories/snapshots/'
+        url 'http://nexus.gluonhq.com/nexus/content/repositories/releases/'
     }
     maven {
         url 'https://oss.sonatype.org/content/repositories/snapshots/'
     }
 }
 
-ext.GLUON_VERSION = "0.0.1-SNAPSHOT"
+ext.GLUON_VERSION = "0.0.1"
 
 dependencies {
     compile "com.gluonhq:charm:$GLUON_VERSION"
