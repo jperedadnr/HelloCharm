@@ -99,7 +99,7 @@ public class HelloCharm extends MobileApplication {
         addViewFactory("Other View", ()->{
             View otherView = new View("Other View");
             
-            otherView.setCenter(new Label("Other view"));
+            otherView.setCenter(new Button("Other view"));
             
             /*
             BOTTOM
