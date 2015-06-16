@@ -57,15 +57,18 @@ public class HelloCharm extends MobileApplication {
             homeToolbar = new ToolBar();
             
             Button menu = new Button(null,new Icon(MaterialDesignIcon.MENU));
+            menu.getStyleClass().add("icon-toggle");
             menu.setOnAction(e->showLayer("Side Menu"));
             
             Button dialog = new Button(null, new Icon(MaterialDesignIcon.DIALPAD));
+            dialog.getStyleClass().add("icon-toggle");
             dialog.setOnAction(e->showDialog());
             
             HBox hbox = new HBox();
             HBox.setHgrow(hbox, Priority.ALWAYS);
             
             Button more = new Button(null,new Icon(MaterialDesignIcon.MORE_VERT));
+            more.getStyleClass().add("icon-toggle");
             more.setOnAction(e->showLayer("Popup"));
             
             homeToolbar.getItems().addAll(menu,dialog,hbox,more);
@@ -104,6 +107,7 @@ public class HelloCharm extends MobileApplication {
             ToolBar toolBar = new ToolBar();
             
             Button menu = new Button(null,new Icon(MaterialDesignIcon.MENU));
+            menu.getStyleClass().add("icon-toggle");
             menu.setOnAction(e->showLayer("Side Menu"));
             
             toolBar.getItems().add(menu);
