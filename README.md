@@ -2,6 +2,9 @@
 
 HelloWorld sample to introduce Gluon Charm capabilities
 
+<img src="https://github.com/jperedadnr/HelloCharm/blob/master/Screenshot.png" width="306">
+
+
 Get Charm [here](http://gluonhq.com/products/charm/downloads/). You will need 
 
 Read the documentation [here](http://docs.gluonhq.com/charm/0.0.1/)
